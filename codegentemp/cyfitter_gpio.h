@@ -18,4 +18,26 @@
 #define INCLUDED_CYFITTER_GPIO_H
 #include "cy_device_headers.h"
 
+/* GreenLed */
+#define GreenLed_0_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define GreenLed_0_INBUF_ENABLED 0u
+#define GreenLed_0_INIT_DRIVESTATE 1u
+#define GreenLed_0_INIT_MUXSEL 0u
+#define GreenLed_0_INPUT_SYNC 2u
+#define GreenLed_0_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
+#define GreenLed_0_NUM 1u
+#define GreenLed_0_PORT GPIO_PRT1
+#define GreenLed_0_SLEWRATE CY_GPIO_SLEW_FAST
+#define GreenLed_0_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
+#define GreenLed_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define GreenLed_INBUF_ENABLED 0u
+#define GreenLed_INIT_DRIVESTATE 1u
+#define GreenLed_INIT_MUXSEL 0u
+#define GreenLed_INPUT_SYNC 2u
+#define GreenLed_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
+#define GreenLed_NUM 1u
+#define GreenLed_PORT GPIO_PRT1
+#define GreenLed_SLEWRATE CY_GPIO_SLEW_FAST
+#define GreenLed_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
+
 #endif /* INCLUDED_CYFITTER_GPIO_H */

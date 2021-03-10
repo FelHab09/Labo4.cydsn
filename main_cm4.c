@@ -16,12 +16,20 @@
 #include "params.h"
 #include "queue.h"
 
+void ChangeLed(){
+    for (;;)
+    {
+    vTaskDelay(pdMS_TO_TICKS(500));
+    Cy_GPIO_Write(GreenLed_0_PORT,GreenLed_0_NUM,0);
+    vTaskDelay(pdMS_TO_TICKS(500));
+    Cy_GPIO_Write(GreenLed_0_PORT,GreenLed_0_NUM,1);
+    }
+}
 int main(void)
 {
-    __enable_irq(); /* Enable global interrupts. */
-
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-
+    __enable_irq();
+    xTaskCreate(ChangeLed,"Change Led",80,NULL,3,NULL);
+    vTaskStartScheduler();
     for(;;)
     {
         /* Place your application code here. */
