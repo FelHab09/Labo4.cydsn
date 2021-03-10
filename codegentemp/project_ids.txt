@@ -1,0 +1,6 @@
+C:\Users\felha\OneDrive\Documents\PSoC Creator\4.4\Laboratoire 4\Labo4.cydsn\Labo4.cyprj|c0dea069-b02e-49d5-964d-6c7c709bda0b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f9845196-e03b-4933-8dc8-f9fa5be3ce99
+C:\Users\felha\OneDrive\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|cb498a36-dd8a-4aa0-ad8a-83970f857e08
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|e66a26bb-69ce-4b3c-aace-0a64beb1cdd7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|3ff18ee3-3ec6-4849-95f0-080745a9fff4
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|c2b4fa5a-4f62-49ed-8abe-8d30874c0b92
