@@ -16,6 +16,9 @@
 #include "params.h"
 #include "queue.h"
 
+// Le lien pour le github est: https://github.com/FelHab09?tab=repositories
+// Yi Yang Yu et Felix Habor
+// GBM2100: Laboratoire 4
 
 void ChangeLed()//Fonction de Partie 1
 {
