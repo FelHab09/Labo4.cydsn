@@ -16,7 +16,9 @@
 #include "params.h"
 #include "queue.h"
 
-void ChangeLed(){
+
+void ChangeLed()//Fonction de Partie 1
+{
     for (;;)
     {
     vTaskDelay(pdMS_TO_TICKS(500));
@@ -33,28 +35,33 @@ task_params_t task_B={
     .delay=4000,
     .message="Tache B en cours \n\r"
 };
-/*void print_loop(void *params){
+QueueHandle_t print_queue;
+void print()// Fonction de partie 3b)
+{
+    char *message;
+    xQueueReceive(print_queue,&message, portMAX_DELAY);
+    UART_PutString(message);
+}
+void print_loop(task_params_t*params)// Fonction de partie 3b)
+{
     for(;;){
-    task_params_t params;
-    vTaskDelay(pdMS_TO_TICKS(params.delay));
-    UART_PutString(params.message);
-    }
-}*/
-void print_loop(task_params_t*params){
-    for(;;){
-    vTaskDelay(pdMS_TO_TICKS(params->delay));
-    UART_PutString(params->message);
+        vTaskDelay(pdMS_TO_TICKS(params->delay));
+        char*message=params->message; // Pour la partie 3a), les trois lignes de code (char*message=params->message; xQueueSend(print_queue,&message, portMAX_DELAY); print();) etaient remplacees par UART_PutString(params->message);
+        xQueueSend(print_queue,&message, portMAX_DELAY);
+        print();
     }
 }
 SemaphoreHandle_t Semaphore;
 int i=0;
-void isr_bouton(){
+void isr_bouton()//Fonction de Partie 2
+{
     i++;
     xSemaphoreGiveFromISR(Semaphore,NULL);
     Cy_GPIO_ClearInterrupt(Bouton_0_PORT,Bouton_0_NUM);
     NVIC_ClearPendingIRQ(Bouton_ISR_cfg.intrSrc);
 }
-void bouton_task(){
+void bouton_task()//Fonction de Partie 2
+{
     for(;;){
         xSemaphoreTake(Semaphore,portMAX_DELAY);
         vTaskDelay(pdMS_TO_TICKS(20));
@@ -71,6 +78,7 @@ void bouton_task(){
 int main(void)
 {
     Semaphore=xSemaphoreCreateBinary();
+    print_queue=xQueueCreate(2,sizeof(char*));
     __enable_irq();
     UART_Start();
     Cy_SysInt_Init(&Bouton_ISR_cfg, isr_bouton);
